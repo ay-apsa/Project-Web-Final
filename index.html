@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jelajah Dunia Bersama Afsyah</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/854/854878.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <header>
+      <img src="LogoAku2.png" class="logo" alt="logo Afsyah" />
+
+      <nav class="menu">
+        <a href="#">Home</a>
+        <a href="destinasi.html">Destinasi</a>
+        <a href="paket wisata.html">Paket Wisata</a>
+        <a href="kontak.html">Kontak</a>
+      </nav>
+
+      <div class="akun-dropdown">
+        <button class="akun-btn">👤</button>
+        <div class="dropdown-content">
+          <a href="login.html">Login</a>
+          <a href="register.html">Registrasi</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="beranda">
+      <div class="beranda-a">
+        <h2>Jelajah Dunia Bersama Afsyah</h2>
+        <p>
+          Jelajah Dunia Bersama Afsyah adalah tempat di mana mimpi untuk
+          menjelajahi dunia mulai menjadi nyata. Kami percaya bahwa setiap
+          perjalanan memiliki cerita, dan setiap destinasi menyimpan keindahan
+          yang layak untuk ditemukan. Di sini, kamu akan menemukan berbagai
+          inspirasi perjalanan, panduan destinasi, serta pilihan paket wisata
+          yang dirancang dengan penuh perhatian. Kami ingin setiap perjalanan
+          yang kamu lakukan terasa nyaman, menyenangkan, dan penuh makna. Karena
+          pada akhirnya, perjalanan bukan hanya tentang tujuan, tetapi tentang
+          pengalaman, cerita, dan kenangan yang akan selalu kamu ingat.
+        </p>
+        <a href="destinasi.html" class="cta-btn">Jelajahi Sekarang →</a>
+      </div>
+    </section>
+
+    <div class="container-footer">
+      <p>© 2026 Jelajah Dunia Bersama Afsyah</p>
+    </div>
+
+    <script>
+      document.querySelectorAll('.menu a').forEach(link => {
+        if (link.href === location.href) link.classList.add('active');
+      });
+    </script>
+  </body>
+</html>

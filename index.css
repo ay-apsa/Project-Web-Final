@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: 15px 50px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s;
+}
+
+.logo {
+  width: 100px;
+}
+
+.menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 70px;
+}
+
+.menu a {
+  color: rgb(57, 88, 49);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  padding-bottom: 2px;
+}
+
+.menu a:hover {
+  color: green;
+}
+
+.menu a.active {
+  color: green;
+  border-bottom: 2px solid green;
+}
+
+/* ===== DROPDOWN AKUN ===== */
+.akun-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+}
+
+.akun-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.akun-btn:hover {
+  transform: scale(1.15);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  min-width: 150px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: rgb(57, 88, 49);
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+  background: #f0f5ee;
+}
+
+.akun-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ===== HERO / BERANDA ===== */
+.beranda {
+  flex: 1;
+  background: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2560")
+    no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.beranda::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.beranda-a {
+  max-width: 700px;
+  text-align: center;
+  color: white;
+  z-index: 2;
+  padding: 60px 20px;
+  animation: fadeUp 0.9s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.beranda-a h2 {
+  font-size: 50px;
+  margin-bottom: 15px;
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.beranda-a p {
+  line-height: 1.8;
+  text-align: justify;
+  color: rgba(255,255,255,0.9);
+}
+
+/* ===== CTA BUTTON ===== */
+.cta-btn {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 13px 32px;
+  background: rgb(57, 88, 49);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+.cta-btn:hover {
+  background: green;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* ===== FOOTER ===== */
+.container-footer {
+  background: rgb(30, 40, 20);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  font-size: 14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  .menu {
+    position: static;
+    transform: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .logo { width: 80px; }
+
+  .beranda-a h2 { font-size: 36px; }
+
+  .beranda-a p {
+    font-size: 15px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header { padding: 10px; }
+
+  .logo { width: 70px; }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu a { font-size: 14px; }
+
+  .beranda-a { padding: 40px 15px; }
+
+  .beranda-a h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .beranda-a p {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .container-footer {
+    font-size: 13px;
+    padding: 15px;
+  }
+}
